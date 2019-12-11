@@ -34,11 +34,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        mMap.uiSettings.isZoomControlsEnabled = true
+
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
+        val house1 = LatLng(-16.542169, -68.085430)
+        val house2 = LatLng(-16.532214, -68.075562)
+        val house3 = LatLng(-16.525782, -68.086700)
+        val house4 = LatLng(-16.526088, -68.109017)
+        val house5 = LatLng(-16.505729, -68.136575)
+        val house6 = LatLng(-16.502622, -68.134740)
+        val house7 = LatLng(-16.499718, -68.121876)
 
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.addMarker(MarkerOptions().position(house1).title("Marker in CALACOTO"))
+        mMap.addMarker(MarkerOptions().position(house2).title("Marker in Sanmiguel"))
+        mMap.addMarker(MarkerOptions().position(house3).title("Marker in irpavi"))
+        mMap.addMarker(MarkerOptions().position(house4).title("Marker in achumani"))
+        mMap.addMarker(MarkerOptions().position(house5).title("Marker in san pedro"))
+        mMap.addMarker(MarkerOptions().position(house6).title("Marker in plaza san pedro"))
+        mMap.addMarker(MarkerOptions().position(house7).title("Marker in stadium"))
+
+        // mMap.moveCamera(CameraUpdateFactory.newLatLng(house1))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(house1, 16f))
     }
 }
