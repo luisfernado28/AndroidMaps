@@ -10,6 +10,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -39,20 +41,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         val house1 = LatLng(-16.542169, -68.085430)
-        val house2 = LatLng(-16.532214, -68.075562)
-        val house3 = LatLng(-16.525782, -68.086700)
-        val house4 = LatLng(-16.526088, -68.109017)
-        val house5 = LatLng(-16.505729, -68.136575)
-        val house6 = LatLng(-16.502622, -68.134740)
-        val house7 = LatLng(-16.499718, -68.121876)
+        val house2 = LatLng(23.135619, -82.347477)
+        val house3 = LatLng(29.953772, -90.069606)
+        val house4 = LatLng(25.812429, -80.123093)
+        val house5 = LatLng(-12.046316, -77.030073)
+        val house6 = LatLng(-13.517432, -71.978632)
+        val house7 = LatLng(-34.636659, -58.364679)
 
-        mMap.addMarker(MarkerOptions().position(house1).title("Marker in CALACOTO"))
-        mMap.addMarker(MarkerOptions().position(house2).title("Marker in Sanmiguel"))
-        mMap.addMarker(MarkerOptions().position(house3).title("Marker in irpavi"))
-        mMap.addMarker(MarkerOptions().position(house4).title("Marker in achumani"))
-        mMap.addMarker(MarkerOptions().position(house5).title("Marker in san pedro"))
-        mMap.addMarker(MarkerOptions().position(house6).title("Marker in plaza san pedro"))
-        mMap.addMarker(MarkerOptions().position(house7).title("Marker in stadium"))
+
+
+        mMap.addMarker(MarkerOptions().position(house1).title("Marker in CALACOTO").icon(BitmapDescriptorFactory.fromResource(R.drawable.seninmode)))
+        mMap.addMarker(MarkerOptions().position(house2).title("Marker in Sanmiguel").icon(BitmapDescriptorFactory.fromResource(R.drawable.uchiha)))
+        mMap.addMarker(MarkerOptions().position(house3).title("Marker in irpavi").icon(BitmapDescriptorFactory.fromResource(R.drawable.akat)))
+        mMap.addMarker(MarkerOptions().position(house4).title("Marker in achumani").icon(BitmapDescriptorFactory.fromResource(R.drawable.cloud)))
+        mMap.addMarker(MarkerOptions().position(house5).title("Marker in san pedro").icon(BitmapDescriptorFactory.fromResource(R.drawable.sharinga)))
+        mMap.addMarker(MarkerOptions().position(house6).title("Marker in plaza san pedro").icon(BitmapDescriptorFactory.fromResource(R.drawable.senju)))
+        mMap.addMarker(MarkerOptions().position(house7).title("Marker in stadium").icon(BitmapDescriptorFactory.fromResource(R.drawable.sand)))
 
         // mMap.moveCamera(CameraUpdateFactory.newLatLng(house1))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(house1, 16f))
